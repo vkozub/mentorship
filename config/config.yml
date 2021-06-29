@@ -1,0 +1,26 @@
+
+apps:
+  - member
+  - member-bsc
+  - member-uhc
+  - member-cvs
+  - member-danica
+  - member-topdanmark
+  - admin
+  - callcenter
+  - client
+  - provider
+  - tas
+  - mailhog
+
+local:
+  admin: https://member.master.uat.teladoc.io
+  callcenter: https://callcenter.master.uat.teladoc.io
+  client: https://client.master.uat.teladoc.io
+  member: https://member.master.uat.teladoc.io
+  provider: https://provider.master.uat.teladoc.io
+  tas: https://tas.master.uat.teladoc.io
+  zimbra: https://zimbra.master.uat.teladoc.io
+  member_bsc: https://member-bsc.master.uat.teladoc.io
+  member_uhc: https://member-uhc.master.uat.teladoc.io
+  member_cvs: https://member-cvs.master.uat.teladoc.io

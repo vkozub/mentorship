@@ -1,0 +1,92 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.6.4
+  Exclude:
+    - "Rakefile"
+    - 'config/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 125
+
+Metrics/MethodLength:
+  Max: 15
+
+#Rails:
+#  Enabled: false
+#
+## Metrics/ClassLength:
+## Metrics/ModuleLength:
+## Metrics/PerceivedComplexity:
+#
+#Style/Documentation:
+#  Enabled: false # don't need no documentation, or at least warnings about documentation
+#
+#Style/GlobalVars:
+#  Enabled: false # got a couple of globals in the system that need to be taken care of first
+#
+#Style/StringLiteralsInInterpolation:
+#  Enabled: false # very meh about this
+#
+#Metrics/LineLength:
+#  Max: 1000 # avoids the most egregious of errors
+#  Exclude:
+#    - "spec/**/*"
+#
+#Rails/ActionFilter:
+#  Enabled: true
+#  EnforcedStyle: filter # Rails 3 doesn't support before_action
+#
+#Lint/Void:
+#  Exclude:
+#    - "config/**/*"
+#    - "spec/**/*"
+#
+#Metrics/AbcSize:
+#  Max: 40
+#
+#Style/GuardClause:
+#  Enabled: false
+#
+#Style/ClassAndModuleChildren:
+#  Enabled: false
+#
+#Style/RescueModifier:
+#  Enabled: false
+#
+#Style/PredicateName:
+#  Enabled: false
+#
+#Style/AccessorMethodName:
+#  Enabled: false
+#
+#Style/RegexpLiteral:
+#  AllowInnerSlashes: true
+#
+#Metrics/ModuleLength:
+#  Enabled: false
+#
+#Metrics/ClassLength:
+#  Enabled: false
+#
+#Metrics/CyclomaticComplexity:
+#  Enabled: false
+#
+#Metrics/PerceivedComplexity:
+#  Enabled: false
+#
+#Metrics/MethodLength:
+#  Enabled: false
+#
+#Metrics/ParameterLists:
+#  Enabled: true
