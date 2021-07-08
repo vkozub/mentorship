@@ -19,7 +19,9 @@ USERNAME = ENV['USERNAME']
 PASSWORD = ENV['PASSWORD']
 
 def options
-  Selenium::WebDriver::Chrome::Options.new(args: %w[window-size=1800,1000])
+  args = %w[window-size=1800,1000]
+  args_options = ENV['HEADLESS'] == 'true' ? args << 'headless':args
+  Selenium::WebDriver::Chrome::Options.new(args: args_options)
 end
 
 Capybara.default_driver = :selenium
