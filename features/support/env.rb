@@ -14,7 +14,7 @@ require_all 'page_objects/sections'
 require_all 'page_objects/pages'
 
 Dotenv.load
-Dotenv.require_keys('USERNAME', 'PASSWORD')
+# Dotenv.require_keys('USERNAME', 'PASSWORD')
 USERNAME = ENV['USERNAME']
 PASSWORD = ENV['PASSWORD']
 
