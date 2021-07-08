@@ -30,7 +30,7 @@ jobs:
             export SUBDOMAIN=master
             export USERNAME=member0
             export PASSWORD=test123456
-            TEST_ENV=ondemand CUCUMBER_BROWSER=chrome bundle exec cucumber features/Initial.feature
+            bundle exec rake run_headless
 
 workflows:
   version: 2
