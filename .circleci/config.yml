@@ -4,7 +4,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.1.3
 
 jobs:
-  test:
+  build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
     steps:
@@ -15,15 +15,29 @@ jobs:
           command: |
             google-chrome --version
             chromedriver --version
-#     - checkout
-#      - run: bundle install
-#      - run: bundle exec cucumber features/Initial.feature
+            bundle -v
+  install_gems:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    steps:
+      - checkout
+      - run: bundle install
+  test:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    steps:
+      - checkout
+      - run: TEST_ENV=ondemand CUCUMBER_BROWSER=chrome bundle exec cucumber features/Initial.feature
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - test
+      - build
+      - install_gems:
+          requires: build
+      - test:
+          requires: install_gems
 
 
 #  - run:
