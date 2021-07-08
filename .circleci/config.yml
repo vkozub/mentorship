@@ -7,7 +7,6 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
@@ -16,6 +15,15 @@ jobs:
           command: |
             google-chrome --version
             chromedriver --version
+#     - checkout
+#      - run: bundle install
+#      - run: bundle exec cucumber features/Initial.feature
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - test
 
 
 #  - run:
