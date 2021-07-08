@@ -22,7 +22,7 @@ jobs:
       - image: circleci/ruby:2.6.3-stretch-node
     steps:
       - checkout
-      - run: bundle -v
+#      - run: bundle -v
       - run: gem install bundler:2.1.4
       - run: bundle -v
       - run: bundle install
