@@ -4,7 +4,20 @@ orbs:
   browser-tools: circleci/browser-tools@1.1.3
 
 jobs:
-  build:
+#  build:
+#    docker:
+#      - image: circleci/ruby:2.6.3-stretch-node
+#    steps:
+#      - browser-tools/install-chrome
+#      - browser-tools/install-chromedriver
+#      - run:
+#          name: Check Chrome install
+#          command: |
+#            google-chrome --version
+#            chromedriver --version
+#            bundle -v
+
+  test:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
     steps:
@@ -15,38 +28,30 @@ jobs:
           command: |
             google-chrome --version
             chromedriver --version
+      - checkout
+      - run:
+          name: Install bundler and gems
+          command: |
+            gem install bundler:2.1.4
             bundle -v
-#            gem install bundler:2.1.4
-  install_gems:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    steps:
-      - checkout
-#      - run: bundle -v
-      - run: gem install bundler:2.1.4
-      - run: bundle -v
-      - run: bundle install
-  test:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    steps:
-      - checkout
-      - run: export DOMAIN=teladoc.io
-      - run: export CLUSTER=uat
-      - run: export SUBDOMAIN=master
-      - run: TEST_ENV=ondemand CUCUMBER_BROWSER=chrome bundle exec cucumber features/Initial.feature
+            bundle install
+      - run:
+          name: Setting ENV vars and running the features
+          command: |
+            export DOMAIN=teladoc.io
+            export CLUSTER=uat
+            export SUBDOMAIN=master
+            TEST_ENV=ondemand CUCUMBER_BROWSER=chrome bundle exec cucumber features/Initial.feature
 
 workflows:
   version: 2
-  build_install_gems_and_test:
+  test:
     jobs:
-      - build
-      - install_gems:
-          requires:
-            - build
-      - test:
-          requires:
-            - install_gems
+#      - build
+      - test
+#      - test:
+#          requires:
+#            - build
 
 
 #  - run:
