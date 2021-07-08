@@ -1,7 +1,6 @@
 Given(/^I am not logged in user$/) do
   @login_page = Login.new
   @login_page.load
-  # binding.pry
 end
 
 When(/^I click Login in button$/) do
