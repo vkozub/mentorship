@@ -31,6 +31,9 @@ jobs:
       - image: circleci/ruby:2.6.3-stretch-node
     steps:
       - checkout
+      - run: export DOMAIN=teladoc.io
+      - run: export CLUSTER=uat
+      - run: export SUBDOMAIN=master
       - run: TEST_ENV=ondemand CUCUMBER_BROWSER=chrome bundle exec cucumber features/Initial.feature
 
 workflows:
