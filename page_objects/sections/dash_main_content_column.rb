@@ -1,6 +1,4 @@
-require_relative 'footer_section'
-
-class MainContentColumn < Footer::Section
+class MainContentColumn < SitePrism::Section
   # ELEMENTS
 
   #   METHODS

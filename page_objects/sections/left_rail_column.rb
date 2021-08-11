@@ -1,4 +1,4 @@
-class LeftRailColumn < Footer::Section
+class LeftRailColumn < SitePrism::Section
   # ELEMENTS
 
   #   METHODS

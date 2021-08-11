@@ -1,4 +1,4 @@
-class Dashboard < Footer::Page
+class Dashboard < Base
   # ELEMENTS
 
   section :main_navigation, MainNavigation, '.top-bar'

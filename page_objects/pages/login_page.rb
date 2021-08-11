@@ -1,6 +1,6 @@
 require_all 'features/support/configuration.rb'
 
-class Login < Footer::Page
+class Login < Base
   # ELEMENTS
 
   set_url "#{Configuration['member']}"
