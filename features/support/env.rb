@@ -14,9 +14,9 @@ require_all 'page_objects/sections'
 require_all 'page_objects/pages'
 
 Dotenv.load
-# Dotenv.require_keys('USERNAME', 'PASSWORD')
-USERNAME = ENV['USERNAME']
-PASSWORD = ENV['PASSWORD']
+# Dotenv.require_keys('USERNAME1', 'PASSWORD1')
+USERNAME1 = ENV['USERNAME1']
+PASSWORD1 = ENV['PASSWORD1']
 
 def options
   args = %w[window-size=1800,1000]
