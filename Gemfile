@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'allure-cucumber'
 gem 'capybara'
 gem 'cucumber'
 gem 'dotenv'
