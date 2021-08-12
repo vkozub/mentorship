@@ -4,14 +4,15 @@ Given(/^I am not logged in user$/) do
 end
 
 When(/^I click Login in button$/) do
+  footer = @login_page.footer_section
   expect(@login_page).to have_login_button
-  expect(@login_page).to have_notice_link
-  expect(@login_page).to have_footer_copyrights
-  expect(@login_page).to have_test_video_link
-  expect(@login_page).to have_cookie_link
-  expect(@login_page).to have_privacy_policy_link
-  expect(@login_page).to have_terms_conditions_link
-  expect(@login_page).to have_increase_contrast_link
+  expect(footer).to have_notice_link
+  expect(footer).to have_footer_copyrights
+  expect(footer).to have_test_video_link
+  expect(footer).to have_cookie_link
+  expect(footer).to have_privacy_policy_link
+  expect(footer).to have_terms_conditions_link
+  expect(footer).to have_increase_contrast_link
   # expect(@login_page.footer_section).to have_test_video_link
   # puts @login_page.footer_section.privacy_policy_link.text
   # text = @login_page.footer_section.privacy_policy_link.text
