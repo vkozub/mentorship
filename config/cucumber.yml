@@ -1,1 +1,1 @@
-default: "-r features --format pretty --color -r features -f html --out report/cucumber_reports/html_report.html -r features -f rerun --out report/cucumber_reports/rerun.txt -r features --format AllureCucumber::CucumberFormatter --out report/allure-results"
+default: -r features --format pretty --color -r features -f html --out report/cucumber_reports/html_report.html -r features -f rerun --out report/cucumber_reports/rerun.txt -r features --format AllureCucumber::CucumberFormatter --out report/allure-results
