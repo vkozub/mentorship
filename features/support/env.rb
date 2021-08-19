@@ -2,6 +2,7 @@ require 'capybara/cucumber'
 require 'dotenv'
 require 'erb'
 require 'ffaker'
+require 'fileutils'
 require 'json'
 require 'pry'
 require 'require_all'
@@ -54,3 +55,6 @@ require 'allure-cucumber'
 #   # categories.json
 #   config.categories = File.new("my_custom_categories.json")
 # end
+
+FileUtils.mkdir_p('report/cucumber-reports/web') unless File.directory?('report/cucumber-reports/web')
+FileUtils.mkdir_p('report/cucumber-reports/failures') unless File.directory?('report/cucumber-reports/failures')
