@@ -57,3 +57,4 @@ end
 
 FileUtils.mkdir_p('report/cucumber-reports/html') unless File.directory?('report/cucumber-reports/html')
 FileUtils.mkdir_p('report/cucumber-reports/rerun') unless File.directory?('report/cucumber-reports/rerun')
+FileUtils.mkdir_p('report/cucumber-reports/parallel') unless File.directory?('report/cucumber-reports/parallel')

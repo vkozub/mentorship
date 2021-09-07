@@ -10,6 +10,7 @@ gem 'factory_bot'
 gem 'ffaker'
 gem 'json'
 gem 'logger'
+gem 'parallel_tests', '2.17.0' # newer version breaks logger
 gem 'pry'
 gem 'rake'
 gem 'require_all'
