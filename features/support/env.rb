@@ -14,6 +14,7 @@ require 'selenium-webdriver'
 require 'site_prism'
 require 'yaml'
 
+require_all 'features/support/helpers'
 require_all 'page_objects/sections'
 require_all 'page_objects/pages'
 

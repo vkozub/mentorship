@@ -13,12 +13,9 @@ When(/^I click Login in button$/) do
   expect(footer).to have_privacy_policy_link
   expect(footer).to have_terms_conditions_link
   expect(footer).to have_increase_contrast_link
-  # expect(@login_page.footer_section).to have_test_video_link
-  # puts @login_page.footer_section.privacy_policy_link.text
-  # text = @login_page.footer_section.privacy_policy_link.text
-  # expect(text).to eq('Web and Mobile Privacy Policy')
-  @login_page.username_field.set USERNAME1
-  @login_page.password_field.set PASSWORD1
+
+	@login_page.fill_in_input(@login_page, 'username_field', "#{USERNAME1}")
+  @login_page.fill_in_input(@login_page, 'password_field', "#{PASSWORD1}")
   @login_page.login_button.click
 end
 
