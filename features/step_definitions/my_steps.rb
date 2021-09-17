@@ -29,3 +29,6 @@ Then(/^I visit personal details page$/) do
   expect(page).to have_content 'Personal Details'
 end
 
+Given(/^there is an open group for TDH brand$/) do
+  generate_open_group
+end

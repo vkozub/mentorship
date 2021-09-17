@@ -5,7 +5,7 @@ task :run_headless do
 end
 
 task :run_head do
-  sh ' TEST_ENV=ondemand HEADLESS=false CUCUMBER_BROWSER=chrome bundle exec cucumber features/Initial.feature'
+  sh ' TEST_ENV=ondemand HEADLESS=false CUCUMBER_BROWSER=chrome bundle exec cucumber features/active_user_log_in.feature'
 end
 
 task :parallel_run do
