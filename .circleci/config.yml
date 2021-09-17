@@ -1,0 +1,39 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@0.1.2
+  browser-tools: circleci/browser-tools@1.1.3
+
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          name: Check Chrome install
+          command: |
+            google-chrome --version
+            chromedriver --version
+      - checkout
+      - run:
+          name: Install bundler and gems
+          command: |
+            gem install bundler:2.1.4
+            bundle -v
+            bundle install
+      - run:
+          name: Setting ENV vars and running the features
+          command: |
+            export DOMAIN=teladoc.io
+            export CLUSTER=uat
+            export SUBDOMAIN=master
+            export USERNAME=member0
+            export PASSWORD=test123456
+            bundle exec rake run_headless
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test

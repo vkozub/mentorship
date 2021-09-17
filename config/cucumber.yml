@@ -1,0 +1,2 @@
+default: -r features --format html --out report/cucumber-reports/html/file.html --format pretty --color -r features -f rerun --out report/cucumber-reports/rerun/rerun.txt -r features --format AllureCucumber::CucumberFormatter --out report/allure-results
+parallel: -r features --format pretty -r features --format html --out report/cucumber-reports/parallel/parallel_<%= ENV['TEST_ENV_NUMBER']%>.html -r features -f rerun -o report/cucumber-reports/rerun/rerun_<%= ENV['TEST_ENV_NUMBER']%>.txt -r features -f AllureCucumber::CucumberFormatter -o report/allure-results
