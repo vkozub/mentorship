@@ -32,3 +32,7 @@ end
 Given(/^there is an open group for TDH brand$/) do
   generate_open_group
 end
+
+And(/^there is a (active|pending|cancelled|suspended) user for this group$/) do |status|
+  generate_member(status)
+end

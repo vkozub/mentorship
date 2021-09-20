@@ -5,7 +5,7 @@ Feature: Log in as a registered user
 
 Background:
   Given there is an open group for TDH brand
-  And there is a registered user for this group
+  And there is a active user for this group
 
   #MEMBER SITE
 Scenario: As a registered user I want to login and get access to my benefits
