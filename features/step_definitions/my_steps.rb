@@ -14,8 +14,8 @@ When(/^I click Login in button$/) do
   expect(footer).to have_terms_conditions_link
   expect(footer).to have_increase_contrast_link
 
-	@login_page.fill_in_input(@login_page, 'username_field', "#{USERNAME1}")
-  @login_page.fill_in_input(@login_page, 'password_field', "#{PASSWORD1}")
+	@login_page.fill_in_input('username_field', "#{USERNAME1}")
+  @login_page.fill_in_input('password_field', "#{PASSWORD1}")
   @login_page.login_button.click
 end
 
@@ -35,4 +35,23 @@ end
 
 And(/^there is a (active|pending|cancelled|suspended) user for this group$/) do |status|
   generate_member(status)
+end
+
+Given(/^I am using member app$/) do
+  @login_page = Login.new
+  @login_page.load
+end
+
+And(/^I sign in with valid credentials$/) do
+  username_field = @login_page.username_field
+  password_field = @login_page.password_field
+  @login_page.fill_in_input('username_field', "#{@member['user_nm']}")
+  @login_page.fill_in_input('password_field', "#{@member['password']}")
+  @login_page.login_button.click
+end
+
+Then(/^I am on TDH core dashboard$/) do
+  @dashboard = Dashboard.new
+  main_navigation = @dashboard.main_navigation
+  expect(main_navigation).to have_content 'My Account'
 end
