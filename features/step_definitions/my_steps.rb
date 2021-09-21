@@ -45,13 +45,13 @@ end
 And(/^I sign in with valid credentials$/) do
   username_field = @login_page.username_field
   password_field = @login_page.password_field
-  @login_page.fill_in_input('username_field', "#{@member['user_nm']}")
-  @login_page.fill_in_input('password_field', "#{@member['password']}")
+  fill_in_input(username_field, "#{@member['user_nm']}")
+  fill_in_input(password_field, "#{@member['password']}")
   @login_page.login_button.click
 end
 
 Then(/^I am on TDH core dashboard$/) do
   @dashboard = Dashboard.new
   main_navigation = @dashboard.main_navigation
-  expect(main_navigation).to have_content 'My Account'
+  verify_text_on_the_page(main_navigation)
 end
