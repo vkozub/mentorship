@@ -1,3 +1,7 @@
+Before do
+	@app = InitialiseHelpers::App.new
+end
+
 After do |scenario|
 	if scenario.failed?
 		file_path = 'report/cucumber-reports/html'

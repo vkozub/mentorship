@@ -38,16 +38,21 @@ And(/^there is a (active|pending|cancelled|suspended) user for this group$/) do 
 end
 
 Given(/^I am using member app$/) do
-  @login_page = Login.new
-  @login_page.load
+  # @login_page = Login.new
+  # @login_page.load
+  # @app = InitialiseHelpers::App.new
+  @app.login_page.load
 end
 
 And(/^I sign in with valid credentials$/) do
-  username_field = @login_page.username_field
-  password_field = @login_page.password_field
+  # username_field = @login_page.username_field
+  # password_field = @login_page.password_field
+  username_field = @app.login_page.username_field
+  password_field = @app.login_page.password_field
   fill_in_input(username_field, "#{@member['user_nm']}")
   fill_in_input(password_field, "#{@member['password']}")
-  @login_page.login_button.click
+  # @login_page.login_button.click
+  @app.login_page.login_button.click
 end
 
 Then(/^I am on TDH core (dashboard)(?: and verifies )?(main_navigation|left_rail_column|main_content_column)?$/) do |page, place|
