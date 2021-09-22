@@ -10,4 +10,8 @@ module InitialiseHelpers
   end
 end
 
+Before do
+  @app = InitialiseHelpers::App.new
+end
+
 World(InitialiseHelpers)

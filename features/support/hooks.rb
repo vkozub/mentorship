@@ -1,6 +1,6 @@
-Before do
-	@app = InitialiseHelpers::App.new
-end
+# Before do
+# 	@app = InitialiseHelpers::App.new
+# end
 
 After do |scenario|
 	if scenario.failed?
