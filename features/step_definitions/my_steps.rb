@@ -50,7 +50,7 @@ And(/^I sign in with valid credentials$/) do
   @login_page.login_button.click
 end
 
-Then(/^I am on TDH core (dashboard|mhd|my_account)(?: and verifies )?(main_navigation)?$/) do |page, place|
+Then(/^I am on TDH core (dashboard)(?: and verifies )?(main_navigation|left_rail_column|main_content_column)?$/) do |page, place|
   @dashboard = Dashboard.new
   main_navigation = @dashboard.main_navigation
   string = load_expected_string(page, place)
