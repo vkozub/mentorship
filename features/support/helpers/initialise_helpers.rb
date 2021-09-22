@@ -3,6 +3,10 @@ module InitialiseHelpers
     def login_page
       Login.new
     end
+
+    def dashboard
+      Dashboard.new
+    end
   end
 end
 
